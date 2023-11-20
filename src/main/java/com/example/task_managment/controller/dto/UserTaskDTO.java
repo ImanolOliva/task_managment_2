@@ -23,6 +23,6 @@ public class UserTaskDTO {
 
     private String address;
 
-    private String rol;
+    private String task;
 
 }

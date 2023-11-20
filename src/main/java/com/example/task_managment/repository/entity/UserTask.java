@@ -31,7 +31,9 @@ public class UserTask {
 
     private String address;
 
-    private String rol;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="task_id",nullable = false)
+    private Task task;
 
 
 

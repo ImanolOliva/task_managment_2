@@ -13,8 +13,4 @@ import java.util.List;
 public interface UserTaskRepository extends JpaRepository <UserTask,Long> {
 
 
-
-
-    String findByRol(String rol);
-
 }

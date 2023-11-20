@@ -27,33 +27,4 @@ public class UserTaskController {
 
 
 
-
-    @PostMapping(value = "/user")
-    public ResponseEntity<?> createUser(@RequestBody UserTaskDTO  userTaskDTO) throws  Exception{
-       UserTask userTask= this.userTaskService.createUser(userTaskDTO);
-
-       if(userTask == null){
-           return ResponseEntity.badRequest().build();
-       }
-       return ResponseEntity.accepted().build();
-    }
-
-
-    @GetMapping(value = "/user")
-    @ResponseStatus(HttpStatus.OK)
-    public List<UserTask> getAllUsersTaks(UserTaskDTO userTaskDTO) throws Exception{
-       return this.userTaskService.listUser(userTaskDTO);
-    }
-
-
-    @GetMapping(value = "/user/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public UserTask getUserById(@PathVariable Long id) throws Exception{
-        return  this.userTaskService.getUserById(id);
-    }
-
-
-
-
-
 }

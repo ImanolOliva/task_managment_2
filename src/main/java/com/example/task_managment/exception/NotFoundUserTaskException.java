@@ -1,6 +1,6 @@
 package com.example.task_managment.exception;
 
-public class NotFoundUserTaskException extends NotFoundInputErrorException{
+public class NotFoundUserTaskException extends NotFoundCustomError{
 
     private String msj;
 
