@@ -25,6 +25,10 @@ public class TaskServiceImpl implements TaskService {
         task.setState(taskDTO.getState());
         this.taskRepository.save(task);
         return taskDTO;
+
+    }
+    public void test(){
+        
     }
     @Override
     public Task getTaskById(Long id) {
