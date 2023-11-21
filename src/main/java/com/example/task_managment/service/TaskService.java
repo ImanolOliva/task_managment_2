@@ -11,5 +11,10 @@ public interface TaskService {
     Task getTaskById(Long id);
 
 
+    void deleteTask(Long id);
+
+    Task updateTask(TaskDTO taskDTO);
+
+
 
 }

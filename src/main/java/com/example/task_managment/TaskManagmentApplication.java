@@ -1,5 +1,6 @@
 package com.example.task_managment;
 
+import com.example.task_managment.repository.entity.Task;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TaskManagmentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TaskManagmentApplication.class, args);
+			SpringApplication.run(TaskManagmentApplication.class, args);
 	}
 
 }

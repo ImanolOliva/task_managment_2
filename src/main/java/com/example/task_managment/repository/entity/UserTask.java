@@ -22,7 +22,6 @@ public class UserTask {
     @NotNull
     @Email
     private String email;
-    @NotBlank
     @NotNull
     private Integer phone;
     @Max(8)

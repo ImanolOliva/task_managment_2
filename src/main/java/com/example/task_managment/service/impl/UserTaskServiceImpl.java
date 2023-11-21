@@ -38,5 +38,11 @@ public class UserTaskServiceImpl implements UserTaskService {
         return userTasksList;
     }
 
+    @Override
+    public UserTask createUser(UserTask userTask) {
+
+       return  this.userTaskRepository.save(userTask);
+    }
+
 }
 

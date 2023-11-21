@@ -2,6 +2,8 @@ package com.example.task_managment.controller;
 
 
 import com.example.task_managment.controller.dto.TaskDTO;
+import com.example.task_managment.exception.NotFoundIdError;
+import com.example.task_managment.exception.NotFoundTaskUpdateError;
 import com.example.task_managment.repository.entity.Task;
 import com.example.task_managment.service.impl.TaskServiceImpl;
 import jakarta.persistence.Access;
@@ -19,7 +21,7 @@ public class TaskController {
 
     @Autowired
     private TaskServiceImpl taskService;
-    @PostMapping()
+    @PostMapping("/task")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public TaskDTO createTask(@RequestBody TaskDTO taskDTO) throws Exception{
 
@@ -30,6 +32,20 @@ public class TaskController {
     @ResponseStatus(HttpStatus.OK)
     public Task getTaskById(@PathVariable Long id) throws Exception{
         return  this.taskService.getTaskById(id);
+    }
+
+
+    @DeleteMapping(value = "/task/{id}")
+    public ResponseEntity<Task> deleteTask(@PathVariable Long id) throws NotFoundIdError {
+            this.taskService.deleteTask(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PutMapping(value = "/task")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Task updateTask(@RequestBody TaskDTO taskDTO) throws NotFoundTaskUpdateError {
+        return this.taskService.updateTask(taskDTO);
     }
 
 

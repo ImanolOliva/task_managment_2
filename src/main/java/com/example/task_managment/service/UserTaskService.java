@@ -12,4 +12,6 @@ public interface UserTaskService {
 
     List<UserTask> getAllUser(UserTaskDTO userTaskDTO);
 
+    UserTask createUser(UserTask userTask);
+
 }
